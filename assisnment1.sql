@@ -1,14 +1,12 @@
-SQL> CREATE TABLE Student5 (
-  2    RollNo INT,
-  3    Name VARCHAR2(50),
-  4    Dept VARCHAR2(20),
-  5    Age INT,
-  6    Phone VARCHAR2(15)
-  7  );
+CREATE TABLE Student5 (
+RollNo INT,
+Name VARCHAR2(50),
+Dept VARCHAR2(20),
+Age INT,
+Phone VARCHAR2(15)
+);
 
-Table created.
-
-SQL> DESC Student5;
+DESC Student5;
  Name                                      Null?    Type
  ----------------------------------------- -------- ----------------------------
  ROLLNO                                             NUMBER(38)
@@ -17,27 +15,22 @@ SQL> DESC Student5;
  AGE                                                NUMBER(38)
  PHONE                                              VARCHAR2(15)
 
-SQL> CREATE TABLE Course4 (
-  2  CourseID INT,
-  3  CourseName VARCHAR2(50),
-  4  Credits INT
-  5  );
+ CREATE TABLE Course4 (
+ CourseID INT,
+ CourseName VARCHAR2(50),
+ Credits INT
+ );
 
-Table created.
-
-SQL> DESC COURSE4;
+ DESC COURSE4;
  Name                                      Null?    Type
  ----------------------------------------- -------- ----------------------------
  COURSEID                                           NUMBER(38)
  COURSENAME                                         VARCHAR2(50)
  CREDITS                                            NUMBER(38)
+ ALTER TABLE STUDENT5 ADD City
+ VARCHAR2(50);
 
-SQL> ALTER TABLE STUDENT5 ADD City
-  2  VARCHAR2(50);
-
-Table altered.
-
-SQL> DESC Student5;
+ DESC Student5;
  Name                                      Null?    Type
  ----------------------------------------- -------- ----------------------------
  ROLLNO                                             NUMBER(38)
@@ -47,12 +40,10 @@ SQL> DESC Student5;
  PHONE                                              VARCHAR2(15)
  CITY                                               VARCHAR2(50)
 
-SQL> ALTER TABLE Student5 ADD Semester
-  2  VARCHAR2(50);
+ALTER TABLE Student5 ADD Semester
+VARCHAR2(50);
 
-Table altered.
-
-SQL> DESC Student5;
+DESC Student5;
  Name                                      Null?    Type
  ----------------------------------------- -------- ----------------------------
  ROLLNO                                             NUMBER(38)
@@ -62,13 +53,10 @@ SQL> DESC Student5;
  PHONE                                              VARCHAR2(15)
  CITY                                               VARCHAR2(50)
  SEMESTER                                           VARCHAR2(50)
+ ALTER TABLE Student5
+ RENAME COLUMN Phone TO MobileNo;
 
-SQL> ALTER TABLE Student5
-  2  RENAME COLUMN Phone TO MobileNo;
-
-Table altered.
-
-SQL> DESC Student5;
+DESC Student5;
  Name                                      Null?    Type
  ----------------------------------------- -------- ----------------------------
  ROLLNO                                             NUMBER(38)
@@ -79,35 +67,25 @@ SQL> DESC Student5;
  CITY                                               VARCHAR2(50)
  SEMESTER                                           VARCHAR2(50)
 
-SQL> DROP TABLE Course4;
+   DROP TABLE Course4;
 
-Table dropped.
-SQL> INSERT INTO Student5 (RollNo,Name,Dept,Age,MobileNo,City,Semester)
-  2  VALUES (100,'Ananya','CSE',21,9263363946,'BANGALORE',5);
 
-1 row created.
+ INSERT INTO Student5 (RollNo,Name,Dept,Age,MobileNo,City,Semester)
+ VALUES (100,'Ananya','CSE',21,9263363946,'BANGALORE',5);
 
-SQL>  INSERT INTO Student5 (RollNo,Name,Dept,Age,MobileNo,City,Semester)
-  2  VALUES (101,'Asha','CSE',21,8765432154,'BIHAR',5);
+ INSERT INTO Student5 (RollNo,Name,Dept,Age,MobileNo,City,Semester)
+ VALUES (101,'Asha','CSE',21,8765432154,'BIHAR',5);
 
-1 row created.
+ INSERT INTO Student5 (RollNo,Name,Dept,Age,MobileNo,City,Semester)
+ VALUES (102,'Aayushi','CSE',21,7654832145,'MUMBAI',5);
 
-SQL> INSERT INTO Student5 (RollNo,Name,Dept,Age,MobileNo,City,Semester)
-  2  VALUES (102,'Aayushi','CSE',21,7654832145,'MUMBAI',5);
+ INSERT INTO Student5 (RollNo,Name,Dept,Age,MobileNo,City,Semester)
+ VALUES (103,'Adira','CSE',22,9876543210,'PURNIA',5);
 
-1 row created.
+ INSERT INTO Student5 (RollNo,Name,Dept,Age,MobileNo,City,Semester)
+  VALUES(104,'Rahul','CSE',23,8765432190,'Patna',5);
 
-SQL> INSERT INTO Student5 (RollNo,Name,Dept,Age,MobileNo,City,Semester)
-  2  VALUES (103,'Adira','CSE',22,9876543210,'PURNIA',5);
-
-1 row created.
-
-SQL> INSERT INTO Student5 (RollNo,Name,Dept,Age,MobileNo,City,Semester)
-  2  VALUES(104,'Rahul','CSE',23,8765432190,'Patna',5);
-
-1 row created.
-
-SQL> SELECT * FROM Student5;
+SELECT * FROM Student5;
 
     ROLLNO NAME
 ---------- --------------------------------------------------
@@ -208,10 +186,9 @@ Patna
 
 
 7 rows selected.
-
-SQL> UPDATE Student5
-  2  SET Dept ='ECE'
-  3  WHERE RollNo =101;
+ UPDATE Student5
+ SET Dept ='ECE'
+ WHERE RollNo =101;
 
 3 rows updated.
 
@@ -230,3 +207,4 @@ SQL> DELETE FROM Student5
   2  WHERE RollNo=104;
 
 1 row deleted.
+
